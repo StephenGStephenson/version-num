@@ -21,7 +21,10 @@ tasks.named('test') {
 }
 
 tasks.register('versionNum') {
-    new File("${projectDir}/build/tmp", "version.txt").text = version
+    doLast {
+        println "output version in ${projectDir}/build/tmp"
+        new File("${projectDir}/build/tmp", "version.txt").text = version
+    }
 }
 
 build.finalizedBy('versionNum')

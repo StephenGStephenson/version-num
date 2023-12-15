@@ -16,6 +16,6 @@ jobs:
       - name: Version
         id: version
         run: |
-          echo "${ll}"
+          echo "${ls -al}"
           echo "$PWD"
           echo "$(cat app/build/tmp/version.txt)" >> $GITHUB_STEP_SUMMARY
