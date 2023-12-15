@@ -1,0 +1,27 @@
+plugins {
+    id 'application'
+}
+
+version = '1.2.3'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+application {
+    mainClass = 'demo.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.register('versionNum') {
+    new File("${projectDir}", "version.txt").text = version
+}
+
+build.finalizedBy('versionNum')
