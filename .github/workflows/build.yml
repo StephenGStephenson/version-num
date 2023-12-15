@@ -18,4 +18,4 @@ jobs:
         run: |
           echo "${ll}"
           echo "$PWD"
-          echo "$(cat /app/build/tmp/version.txt)" >> $GITHUB_STEP_SUMMARY
+          echo "$(cat app/build/tmp/version.txt)" >> $GITHUB_STEP_SUMMARY
