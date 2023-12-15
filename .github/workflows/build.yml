@@ -13,6 +13,10 @@ jobs:
           distribution: 'temurin'
       - name: Build with Gradle
         uses: gradle/gradle-build-action@v2
+        with:
+          arguments: |
+            clean
+            build
       - name: Version
         id: version
         run: |
