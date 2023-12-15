@@ -15,4 +15,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Version
         id: version
-        run: echo "$(cat app/version.txt)" >> $GITHUB_STEP_SUMMARY
+        run: |
+          echo "${ll}"
+          echo "$PWD"
+          echo "$(cat /app/build/tmp/version.txt)" >> $GITHUB_STEP_SUMMARY
